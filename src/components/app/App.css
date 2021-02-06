@@ -1,0 +1,18 @@
+.list-of-phots{
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.item-block{
+  width: 40%;
+}
+.photo-block{
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+.photo-block img{
+  width: 100%;
+}
