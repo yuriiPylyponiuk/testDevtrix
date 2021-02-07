@@ -2,7 +2,8 @@ import * as types from './contactActionTypes';
 
 const initialState = {
   phoneNumber: '',
-  email: ''
+  email: '',
+  required: false
 }
 
 export default function reducer(state = initialState, action) {
@@ -10,7 +11,8 @@ export default function reducer(state = initialState, action) {
     case types.GET_NUMBER:
       return{
         ...state,
-        phoneNumber: action.payload
+        phoneNumber: action.payload,
+        required: true
       }
     case types.GET_EMAIL:
       return{

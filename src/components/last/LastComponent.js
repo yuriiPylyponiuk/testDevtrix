@@ -1,7 +1,8 @@
 import React from "react"
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
-import {action1, action2, action3, action4, action5} from '../../redux/last/lastActions'
+import {action1, action2, action3, action4, action5} from '../../redux/last/lastActions';
+import { Button, Form, FormGroup, Label, Input, Badge, FormText, Container, Row, Col } from 'reactstrap';
 
 class LastComponent extends React.Component {
   constructor(props){
@@ -14,35 +15,35 @@ class LastComponent extends React.Component {
   }
 
   handleChanhge1(e){
-    if(this.props.actionData1 == 'on'){
+    if(this.props.finalReducer.actionData1 == 'on'){
       this.props.action1(false)  
     }else{
       this.props.action1(e.target.value)
     }
   }
   handleChanhge2(e){
-    if(this.props.actionData2 == 'on'){
+    if(this.props.finalReducer.actionData2 == 'on'){
       this.props.action2(false)  
     }else{
       this.props.action2(e.target.value)
     }
   }
   handleChanhge3(e){
-    if(this.props.actionData3 == 'on'){
+    if(this.props.finalReducer.actionData3 == 'on'){
       this.props.action3(false)  
     }else{
       this.props.action3(e.target.value)
     }
   }
   handleChanhge4(e){
-    if(this.props.actionData4 == 'on'){
+    if(this.props.finalReducer.actionData4 == 'on'){
       this.props.action4(false)  
     }else{
       this.props.action4(e.target.value)
     }
   }
   handleChanhge5(e){
-    if(this.props.actionData5 == 'on'){
+    if(this.props.finalReducer.actionData5 == 'on'){
       this.props.action5(false)  
     }else{
       this.props.action5(e.target.value)
@@ -52,56 +53,69 @@ class LastComponent extends React.Component {
 	render(){
 		return (
 			<div>
-				<form>
-          <label>
-            On/Off:
-            <input
-              name="isGoing"
-              type="checkbox"
-              checked={this.props.actionData1}
-              onChange={(e)=> {this.handleChanhge1(e)}} />
-          </label>
-          <label>
-            On/Off:
-            <input
-              name="isGoing"
-              type="checkbox"
-              checked={this.props.actionData2}
-              onChange={(e)=> {this.handleChanhge2(e)}} />
-          </label>
-          <label>
-            On/Off:
-            <input
-              name="isGoing"
-              type="checkbox"
-              checked={this.props.actionData3}
-              onChange={(e)=> {this.handleChanhge3(e)}} />
-          </label>
-          <label>
-            On/Off:
-            <input
-              name="isGoing"
-              type="checkbox"
-              checked={this.props.actionData4}
-              onChange={(e)=> {this.handleChanhge4(e)}} />
-          </label>
-          <label>
-            On/Off:
-            <input
-              name="isGoing"
-              type="checkbox"
-              checked={this.props.actionData5}
-              onChange={(e)=> {this.handleChanhge5(e)}} />
-          </label>
-        </form>
-        <Link to='/page3/'>Prev</Link>
+        <FormGroup check>
+         <h1>Select <Badge color="secondary">Options</Badge></h1>
+          <Row>
+            <Label check>
+              <Input 
+                type="checkbox" 
+                checked={this.props.finalReducer.actionData1}
+                onChange={(e)=> {this.handleChanhge1(e)}} />
+              Check me out
+            </Label>
+          </Row>
+          <Row>
+            <Label check>
+              <Input 
+                type="checkbox" 
+                checked={this.props.finalReducer.actionData2}
+                onChange={(e)=> {this.handleChanhge2(e)}} />
+              Check me out
+            </Label>
+          </Row>
+          <Row>
+            <Label check>
+              <Input 
+                type="checkbox" 
+                checked={this.props.finalReducer.actionData3}
+                onChange={(e)=> {this.handleChanhge3(e)}} />
+              Check me out
+            </Label>
+          </Row>
+          <Row>
+            <Label check>
+              <Input 
+                type="checkbox" 
+                checked={this.props.finalReducer.actionData4}
+                onChange={(e)=> {this.handleChanhge4(e)}} />
+              Check me out
+            </Label>
+          </Row>
+          <Row>
+            <Label check>
+              <Input 
+                type="checkbox" 
+                checked={this.props.finalReducer.actionData5}
+                onChange={(e)=> {this.handleChanhge5(e)}} />
+              Check me out
+            </Label>
+          </Row>
+        </FormGroup>
+        <Row xs="12">
+          <Col  xs='0'>
+            <Link to='/page3/'><Button color="primary" size="lg">Prev</Button></Link>
+          </Col>
+          <Col  xs='0'  sm={{ offset: 10 }}>
+            <Button size="lg">Save</Button>
+          </Col>
+        </Row>
 			</div>
 		)
 	}
 }
 
 const mapStateToProps = (state) => {
-  return {...state.finalReducer}
+  return {...state}
 }
 
 export default connect(mapStateToProps, {action1, action2, action3, action4, action5})(LastComponent);

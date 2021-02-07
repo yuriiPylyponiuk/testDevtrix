@@ -5,7 +5,6 @@ class LastPage extends React.Component{
   render(){
     return(
       <div>
-        <h1>Hello LastPage</h1>
         <LastComponent />
       </div>
     )

@@ -3,14 +3,16 @@ import * as types from './mainActionTypes';
 const initialState = {
   name: '',
   description: '',
-  status: ''
+  status: '',
+  required: false
 }
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case types.GET_NAME:
       return{
         ...state,
-        name: action.payload
+        name: action.payload,
+        required:true
       }
     case types.GET_DESCRIPTION:
       return{
