@@ -3,3 +3,4 @@ export const ACTION_TWO = 'ACTION_TWO';
 export const ACTION_THREE = 'ACTION_THREE';
 export const ACTION_FOUR = 'ACTION_FOUR';
 export const ACTION_FIVE = 'ACTION_FIVE';
+export const NEW_USER = 'NEW_USER';

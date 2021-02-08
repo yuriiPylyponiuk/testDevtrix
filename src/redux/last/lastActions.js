@@ -1,7 +1,6 @@
 import * as types from './lastActionTypes';
 
 export function action1(payload){
-  console.log(payload)
   return {type: types.ACTION_ONE, payload}
 }
 export function action2(payload){
@@ -15,4 +14,7 @@ export function action4(payload){
 }
 export function action5(payload){
   return {type: types.ACTION_FIVE, payload}
+}
+export function createNewUser(payload){
+  return {type: types.NEW_USER, payload}
 }

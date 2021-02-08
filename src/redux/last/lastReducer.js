@@ -6,6 +6,7 @@ const initialState = {
   actionData3: false,
   actionData4: false,
   actionData5: false,
+  users: []
 }
 
 export default function reducer(state = initialState, action) {
@@ -34,6 +35,13 @@ export default function reducer(state = initialState, action) {
       return{
         ...state,
         actionData5:  action.payload
+      }
+    case types.NEW_USER:
+      let arr = state.users.filter((item) => action.payload.userPhoneNumber != item.userPhoneNumber);
+      console.log(arr)
+      return{
+        ...state,
+        users:  [...arr, action.payload]
       }
   
       default: 
