@@ -62,7 +62,7 @@ class LastComponent extends React.Component {
     userObj.userActionData3= this.props.finalReducer.actionData3;
     userObj.userActionData4= this.props.finalReducer.actionData4;
     userObj.userActionData5= this.props.finalReducer.actionData5;
-    if( Boolean(userObj.userName) == true || Boolean(userObj.userPhoneNumber) == true){
+    if( Boolean(userObj.userName) == true && Boolean(userObj.userPhoneNumber) == true){
       this.props.createNewUser(userObj)
       alert('Thanks for your information')
     }else{

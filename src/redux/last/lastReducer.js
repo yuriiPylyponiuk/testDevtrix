@@ -38,7 +38,6 @@ export default function reducer(state = initialState, action) {
       }
     case types.NEW_USER:
       let arr = state.users.filter((item) => action.payload.userPhoneNumber != item.userPhoneNumber);
-      console.log(arr)
       return{
         ...state,
         users:  [...arr, action.payload]
